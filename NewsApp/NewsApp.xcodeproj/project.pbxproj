@@ -18,6 +18,7 @@
 		2FAAE30A2C3DA6DD00AE20B3 /* NewsAPIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FAAE3092C3DA6DD00AE20B3 /* NewsAPIResponse.swift */; };
 		2FAAE30D2C3DA8BD00AE20B3 /* ArticleRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FAAE30C2C3DA8BD00AE20B3 /* ArticleRowView.swift */; };
 		2FAAE3102C3DBB6D00AE20B3 /* ArticleListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FAAE30F2C3DBB6D00AE20B3 /* ArticleListView.swift */; };
+		2FAAE3122C3DBE9B00AE20B3 /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FAAE3112C3DBE9B00AE20B3 /* SafariView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		2FAAE30C2C3DA8BD00AE20B3 /* ArticleRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleRowView.swift; sourceTree = "<group>"; };
 		2FAAE30E2C3DB21400AE20B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		2FAAE30F2C3DBB6D00AE20B3 /* ArticleListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListView.swift; sourceTree = "<group>"; };
+		2FAAE3112C3DBE9B00AE20B3 /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 			children = (
 				2FAAE30C2C3DA8BD00AE20B3 /* ArticleRowView.swift */,
 				2FAAE30F2C3DBB6D00AE20B3 /* ArticleListView.swift */,
+				2FAAE3112C3DBE9B00AE20B3 /* SafariView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -178,6 +181,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2FAAE30A2C3DA6DD00AE20B3 /* NewsAPIResponse.swift in Sources */,
+				2FAAE3122C3DBE9B00AE20B3 /* SafariView.swift in Sources */,
 				2FAAE30D2C3DA8BD00AE20B3 /* ArticleRowView.swift in Sources */,
 				2FA6796F2C3AB35B005ECC01 /* Persistence.swift in Sources */,
 				2FAAE3102C3DBB6D00AE20B3 /* ArticleListView.swift in Sources */,
