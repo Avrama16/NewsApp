@@ -17,6 +17,7 @@
 		2FAAE3082C3D9C6900AE20B3 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FAAE3072C3D9C6900AE20B3 /* Article.swift */; };
 		2FAAE30A2C3DA6DD00AE20B3 /* NewsAPIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FAAE3092C3DA6DD00AE20B3 /* NewsAPIResponse.swift */; };
 		2FAAE30D2C3DA8BD00AE20B3 /* ArticleRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FAAE30C2C3DA8BD00AE20B3 /* ArticleRowView.swift */; };
+		2FAAE3102C3DBB6D00AE20B3 /* ArticleListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FAAE30F2C3DBB6D00AE20B3 /* ArticleListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		2FAAE3092C3DA6DD00AE20B3 /* NewsAPIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsAPIResponse.swift; sourceTree = "<group>"; };
 		2FAAE30C2C3DA8BD00AE20B3 /* ArticleRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleRowView.swift; sourceTree = "<group>"; };
 		2FAAE30E2C3DB21400AE20B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		2FAAE30F2C3DBB6D00AE20B3 /* ArticleListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				2FAAE30C2C3DA8BD00AE20B3 /* ArticleRowView.swift */,
+				2FAAE30F2C3DBB6D00AE20B3 /* ArticleListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -177,6 +180,7 @@
 				2FAAE30A2C3DA6DD00AE20B3 /* NewsAPIResponse.swift in Sources */,
 				2FAAE30D2C3DA8BD00AE20B3 /* ArticleRowView.swift in Sources */,
 				2FA6796F2C3AB35B005ECC01 /* Persistence.swift in Sources */,
+				2FAAE3102C3DBB6D00AE20B3 /* ArticleListView.swift in Sources */,
 				2FA679682C3AB358005ECC01 /* ContentView.swift in Sources */,
 				2FA679722C3AB35B005ECC01 /* NewsApp.xcdatamodeld in Sources */,
 				2FA679662C3AB358005ECC01 /* NewsAppApp.swift in Sources */,

@@ -12,7 +12,7 @@ struct ArticleRowView: View {
     let article: Article
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
-            AsyncImage(url: article.imageURL) { 
+            AsyncImage(url: article.imageURL) {
                 phase in
                 switch phase {
                     
@@ -22,13 +22,13 @@ struct ArticleRowView: View {
                         ProgressView()
                         Spacer()
                         
-                }
+                    }
                     
                 case.success(let image):
                     image
                         .resizable()
                         .aspectRatio(contentMode: .fill)
-                
+                    
                 case.failure:
                     HStack {
                         Spacer()
@@ -48,7 +48,7 @@ struct ArticleRowView: View {
                 Text(article.title)
                     .font(.headline)
                     .lineLimit(3)
-                    
+                
                 Text(article.descriptionText)
                     .font(.subheadline)
                     .lineLimit(2)
@@ -71,13 +71,13 @@ struct ArticleRowView: View {
                         Image(systemName: "square.and.arrow.up")
                     }
                     .buttonStyle(.bordered)
-
-                    }
+                    
                 }
             }
-            .padding([.horizontal])
         }
+        .padding([.horizontal])
     }
+}
 
 #Preview {
     NavigationView {
