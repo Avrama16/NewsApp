@@ -15,5 +15,4 @@ struct NewsAPIResponse: Decodable {
     
     let code: String?
     let smessage: String?
-    
 }
