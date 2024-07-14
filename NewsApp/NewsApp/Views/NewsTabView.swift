@@ -15,10 +15,10 @@ struct NewsTabView: View {
         NavigationView{
             ArticleListView(articles: articles)
                 .overlay(overlayView)
-                .task(id: articleNewsVM.fetchTaskToken, loadTask)
+                .task(id: articleNewsVM.fetchTaskToken.category, loadTask)
             //☀️
                 .refreshable(action: refreshTask)
-                .navigationTitle(articleNewsVM.fetchTaskToken.categoty.text)
+                .navigationTitle(articleNewsVM.fetchTaskToken.category.text)
                 .navigationBarItems(trailing: menu)
         }
     }
@@ -43,16 +43,21 @@ struct NewsTabView: View {
         }
     }
     
+    @Sendable
     private func loadTask() async {
         await articleNewsVM.loadArticles()
     }
+    
+    
     private func refreshTask() {
-        articleNewsVM.fetchTaskToken = FetchTaskToken(categoty: articleNewsVM.fetchTaskToken.categoty, token: Date())
+        DispatchQueue.main.async {
+            articleNewsVM.fetchTaskToken = FetchTaskToken(category: articleNewsVM.fetchTaskToken.category, token: Date())
+        }
     }
     
     private var menu: some View {
         Menu {
-            Picker("Category", selection: $articleNewsVM.fetchTaskToken.categoty) {
+            Picker("Category", selection: $articleNewsVM.fetchTaskToken.category) {
                 ForEach(Category.allCases) {
                     Text($0.text).tag($0)
                 }
@@ -65,7 +70,13 @@ struct NewsTabView: View {
 }
 
 
-#Preview {
+struct NewsTabView_Previews: PreviewProvider {
+    
+    @StateObject static var articleBookmarkVM = ArticleBookmarkViewModel()
 
-    NewsTabView(articleNewsVM: ArticleNewsViewModel(articles: Article.previewData))
+    
+    static var previews: some View {
+        NewsTabView(articleNewsVM: ArticleNewsViewModel(articles: Article.previewData))
+            .environmentObject(articleBookmarkVM)
+    }
 }

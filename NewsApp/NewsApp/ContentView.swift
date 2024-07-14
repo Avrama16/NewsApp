@@ -15,6 +15,11 @@ struct ContentView: View {
                 .tabItem {
                     Label("News", systemImage: "newspaper.fill")
             }
+            
+            BookmarkTabView()
+                .tabItem {
+                    Label("Saved", systemImage: "bookmark")
+                }
         }
     }
 }

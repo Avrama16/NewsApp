@@ -15,7 +15,7 @@ enum DataFetchPhase<T> {
 }
 
 struct FetchTaskToken: Equatable {
-    var categoty: Category
+    var category: Category
     var token: Date
 }
 
@@ -32,14 +32,14 @@ class ArticleNewsViewModel: ObservableObject {
         } else {
             self.phase = .empty
         }
-        self.fetchTaskToken = FetchTaskToken(categoty: selectedCategory, token: Date())
+        self.fetchTaskToken = FetchTaskToken(category: selectedCategory, token: Date())
     }
     
     func loadArticles() async {
         if Task.isCancelled { return }
         phase = .empty
         do {
-            let articles = try await newsAPI.fetch(from: fetchTaskToken.categoty)
+            let articles = try await newsAPI.fetch(from: fetchTaskToken.category)
             if Task.isCancelled { return }
             phase = .success(articles)
         } catch {

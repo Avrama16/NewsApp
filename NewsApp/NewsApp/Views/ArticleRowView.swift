@@ -103,13 +103,18 @@ extension View {
     }
 }
 
-#Preview {
+struct ArticleRowView_Previews: PreviewProvider {
     
-    NavigationView {
-        List {
-            ArticleRowView(article: .previewData[0])
-                .listRowInsets(.init(top: 0, leading: 0, bottom: 0, trailing: 0))
+    @StateObject static var articleBookmarkVM = ArticleBookmarkViewModel()
+
+    static var previews: some View {
+        NavigationView {
+            List {
+                ArticleRowView(article: .previewData[0])
+                    .listRowInsets(.init(top: 0, leading: 0, bottom: 0, trailing: 0))
+            }
+            .listStyle(.plain)
         }
-        .listStyle(.plain)
+        .environmentObject(articleBookmarkVM)
     }
 }

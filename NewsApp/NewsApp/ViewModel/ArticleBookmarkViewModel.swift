@@ -13,6 +13,7 @@ class ArticleBookmarkViewModel: ObservableObject {
     
     @Published private(set) var bookmarks: [Article] = []
     
+    
     func isBookmarked(for article: Article) -> Bool {
         bookmarks.first { article.id == $0.id } != nil
         
