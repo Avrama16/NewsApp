@@ -12,7 +12,18 @@ import SwiftUI
 class ArticleBookmarkViewModel: ObservableObject {
     
     @Published private(set) var bookmarks: [Article] = []
+    private let bookmarkStore = PlistDataStore<[Article]>(filename: "bookmarks")
     
+    static let shared = ArticleBookmarkViewModel()
+    private init() {
+        async {
+            await load()
+        }
+    }
+    
+    private func load() async {
+        bookmarks = await bookmarkStore.load() ?? []
+    }
     
     func isBookmarked(for article: Article) -> Bool {
         bookmarks.first { article.id == $0.id } != nil
@@ -24,6 +35,7 @@ class ArticleBookmarkViewModel: ObservableObject {
             return
         }
         bookmarks.insert(article, at: 0)
+        bookmarkUpdated()
     }
     
     func removeBookmark(for article: Article) {
@@ -31,6 +43,14 @@ class ArticleBookmarkViewModel: ObservableObject {
             return
         }
         bookmarks.remove(at: index)
+        bookmarkUpdated()
+    }
+    
+    private func bookmarkUpdated() {
+        let bookmark = self.bookmarks
+        async {
+            await bookmarkStore.save(bookmarks)
+        }
     }
     
 }

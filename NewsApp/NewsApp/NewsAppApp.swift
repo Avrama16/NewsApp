@@ -11,7 +11,7 @@ import SwiftUI
 struct NewsAppApp: App {
     let persistenceController = PersistenceController.shared
     
-    @StateObject var articleBookmarkVM = ArticleBookmarkViewModel()
+    @StateObject var articleBookmarkVM = ArticleBookmarkViewModel.shared
 
     var body: some Scene {
         WindowGroup {
