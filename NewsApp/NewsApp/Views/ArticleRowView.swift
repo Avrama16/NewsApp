@@ -72,15 +72,16 @@ struct ArticleRowView: View {
                         Image(systemName: "square.and.arrow.up")
                     }
                     .buttonStyle(.bordered)
-                    
                 }
+                Spacer(minLength: 0)
             }
         }
-        .padding([.horizontal])
+        .padding(.horizontal)
     }
 }
 
 extension View {
+    
     func presentShereSheet(url: URL) {
         let activityVC = UIActivityViewController(activityItems: [url], applicationActivities: nil)
         (UIApplication.shared.connectedScenes.first as? UIWindowScene)?
