@@ -33,5 +33,7 @@ struct ArticleListView: View {
 }
 
 #Preview {
+    
     ArticleListView(articles: Article.previewData)
+        
 }

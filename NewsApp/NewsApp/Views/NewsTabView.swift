@@ -66,5 +66,6 @@ struct NewsTabView: View {
 
 
 #Preview {
+
     NewsTabView(articleNewsVM: ArticleNewsViewModel(articles: Article.previewData))
 }
