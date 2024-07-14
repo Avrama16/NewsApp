@@ -10,11 +10,13 @@ import SwiftUI
 @main
 struct NewsAppApp: App {
     let persistenceController = PersistenceController.shared
+    
+    @StateObject var articleBookmarkVM = ArticleBookmarkViewModel.shared
 
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+                .environmentObject(articleBookmarkVM)
         }
     }
 }

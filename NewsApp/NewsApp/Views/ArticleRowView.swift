@@ -9,6 +9,8 @@ import SwiftUI
 
 struct ArticleRowView: View {
     
+    @EnvironmentObject var articleBookmarkVM: ArticleBookmarkViewModel
+    
     let article: Article
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
@@ -62,8 +64,9 @@ struct ArticleRowView: View {
                     Spacer()
                     
                     Button {
+                        toggleBookmark(for: article)
                     } label: {
-                        Image(systemName: "bookmark")
+                        Image(systemName: articleBookmarkVM.isBookmarked(for: article) ? "bookmark.fill" : "bookmark")
                     }
                     .buttonStyle(.bordered)
                     Button {
@@ -72,15 +75,24 @@ struct ArticleRowView: View {
                         Image(systemName: "square.and.arrow.up")
                     }
                     .buttonStyle(.bordered)
-                    
                 }
+                Spacer(minLength: 0)
             }
         }
-        .padding([.horizontal])
+        .padding(.horizontal)
+    }
+    
+    private func toggleBookmark(for article: Article) {
+        if articleBookmarkVM.isBookmarked(for: article) {
+            articleBookmarkVM.removeBookmark(for: article)
+        } else {
+            articleBookmarkVM.addBookmark(for: article)
+        }
     }
 }
 
 extension View {
+    
     func presentShereSheet(url: URL) {
         let activityVC = UIActivityViewController(activityItems: [url], applicationActivities: nil)
         (UIApplication.shared.connectedScenes.first as? UIWindowScene)?
@@ -91,12 +103,18 @@ extension View {
     }
 }
 
-#Preview {
-    NavigationView {
-        List {
-            ArticleRowView(article: .previewData[0])
-                .listRowInsets(.init(top: 0, leading: 0, bottom: 0, trailing: 0))
+struct ArticleRowView_Previews: PreviewProvider {
+    
+    @StateObject static var articleBookmarkVM = ArticleBookmarkViewModel.shared
+
+    static var previews: some View {
+        NavigationView {
+            List {
+                ArticleRowView(article: .previewData[0])
+                    .listRowInsets(.init(top: 0, leading: 0, bottom: 0, trailing: 0))
+            }
+            .listStyle(.plain)
         }
-        .listStyle(.plain)
+        .environmentObject(articleBookmarkVM)
     }
 }
