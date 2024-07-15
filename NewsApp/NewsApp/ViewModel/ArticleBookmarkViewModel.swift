@@ -16,7 +16,7 @@ class ArticleBookmarkViewModel: ObservableObject {
     
     static let shared = ArticleBookmarkViewModel()
     private init() {
-        async {
+        Task {
             await load()
         }
     }
@@ -48,8 +48,8 @@ class ArticleBookmarkViewModel: ObservableObject {
     
     private func bookmarkUpdated() {
         let bookmark = self.bookmarks
-        async {
-            await bookmarkStore.save(bookmarks)
+        Task {
+            await bookmarkStore.save(bookmark)
         }
     }
     

@@ -16,6 +16,11 @@ struct ContentView: View {
                     Label("News", systemImage: "newspaper.fill")
             }
             
+            SearchTabView()
+                .tabItem {
+                    Label("Search", systemImage: "sparkle.magnifyingglass")
+                }
+            
             BookmarkTabView()
                 .tabItem {
                     Label("Saved", systemImage: "bookmark")

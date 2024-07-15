@@ -57,8 +57,8 @@ struct NewsAPI {
         
         var url = "https://newsapi.org/v2/everything?"
         url += "apiKey=\(apiKey)"
-        url += "&language=uk"
-        url += "\(percentEncodedString)"
+        url += "&language=en"
+        url += "&q=\(percentEncodedString)"
         return URL(string: url)!
       
     }
@@ -67,7 +67,7 @@ struct NewsAPI {
         
         var url = "https://newsapi.org/v2/top-headlines?"
         url += "apiKey=\(apiKey)"
-        url += "&language=uk"
+        url += "&language=en"
         url += "&category=\(category.rawValue)"
         return URL(string: url)!
     }
