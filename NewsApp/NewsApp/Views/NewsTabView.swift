@@ -48,7 +48,7 @@ struct NewsTabView: View {
         await articleNewsVM.loadArticles()
     }
     
-    
+
     private func refreshTask() {
         DispatchQueue.main.async {
             articleNewsVM.fetchTaskToken = FetchTaskToken(category: articleNewsVM.fetchTaskToken.category, token: Date())

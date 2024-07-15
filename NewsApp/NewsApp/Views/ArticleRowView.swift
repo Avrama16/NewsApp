@@ -29,7 +29,9 @@ struct ArticleRowView: View {
                 case.success(let image):
                     image
                         .resizable()
+                        .scaledToFill()
                         .aspectRatio(contentMode: .fill)
+                        .frame(maxWidth: .infinity , maxHeight: .infinity)
                     
                 case.failure:
                     HStack {

@@ -14,7 +14,7 @@ class ArticleSearchViewModel: ObservableObject {
     @Published var searchQuery = ""
     private let newsAPI = NewsAPI.shared
     
-    func searchArticles() async {
+    func searchArticle() async {
         if Task.isCancelled { return }
         let searchQuery = self.searchQuery.trimmingCharacters(in: .whitespacesAndNewlines)
         phase = .empty
