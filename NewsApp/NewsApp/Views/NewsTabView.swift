@@ -16,8 +16,7 @@ struct NewsTabView: View {
             ArticleListView(articles: articles)
                 .overlay(overlayView)
                 .task(id: articleNewsVM.fetchTaskToken.category, loadTask)
-            //☀️
-                .refreshable(action: refreshTask)
+                .refreshable { refreshTask() }
                 .navigationTitle(articleNewsVM.fetchTaskToken.category.text)
                 .navigationBarItems(trailing: menu)
         }
@@ -50,9 +49,7 @@ struct NewsTabView: View {
     
 
     private func refreshTask() {
-        DispatchQueue.main.async {
-            articleNewsVM.fetchTaskToken = FetchTaskToken(category: articleNewsVM.fetchTaskToken.category, token: Date())
-        }
+        articleNewsVM.fetchTaskToken = FetchTaskToken(category: articleNewsVM.fetchTaskToken.category, token: Date())
     }
     
     private var menu: some View {

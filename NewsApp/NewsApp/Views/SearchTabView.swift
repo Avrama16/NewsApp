@@ -18,7 +18,7 @@ struct SearchTabView: View {
                 .navigationTitle("Search")
         }
         .searchable(text: $searchVM.searchQuery)
-        .onChange(of: searchVM.searchQuery) { newValue in
+        .onChange(of: searchVM.searchQuery) { _, newValue in
             if newValue.isEmpty {
                 searchVM.phase = .empty
             }
