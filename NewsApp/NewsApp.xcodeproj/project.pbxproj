@@ -131,13 +131,13 @@
 		2FAAE30B2C3DA88F00AE20B3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				2FAAE30C2C3DA8BD00AE20B3 /* ArticleRowView.swift */,
 				2FAAE30F2C3DBB6D00AE20B3 /* ArticleListView.swift */,
-				2FAAE3112C3DBE9B00AE20B3 /* SafariView.swift */,
-				2FEC1B362C411026005669E7 /* NewsTabView.swift */,
-				2FEC1B3A2C415C46005669E7 /* EmptyPlaceholderView.swift */,
-				2FEC1B3C2C415DA9005669E7 /* RetryView.swift */,
+				2FAAE30C2C3DA8BD00AE20B3 /* ArticleRowView.swift */,
 				2FC01E622C43F186001641B0 /* BookmarkTabView.swift */,
+				2FEC1B3A2C415C46005669E7 /* EmptyPlaceholderView.swift */,
+				2FEC1B362C411026005669E7 /* NewsTabView.swift */,
+				2FEC1B3C2C415DA9005669E7 /* RetryView.swift */,
+				2FAAE3112C3DBE9B00AE20B3 /* SafariView.swift */,
 				2FC01E682C45068E001641B0 /* SearchTabView.swift */,
 			);
 			path = Views;
