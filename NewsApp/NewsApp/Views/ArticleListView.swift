@@ -15,7 +15,7 @@ struct ArticleListView: View {
     
     var body: some View {
         List {
-            ForEach(articles) { article in
+            ForEach(articles .filter({ $0.author != nil })) { article in
                 ArticleRowView(article: article)
                     .onTapGesture {
                         selectedArticle = article
